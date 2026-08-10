@@ -1,7 +1,7 @@
 {% extends "!layout.html" %}
 {% block sidebartitle %}
-    <a href="https://www.lafvintech.com/" class="logo-link">
-        <img src="https://lafvintech.com/cdn/shop/files/logo_V2_300x@2x.png?v=1642487152" class="logo" alt="{{ _('Logo') }}"/>
+    <a href="{{ pathto(master_doc) }}" class="logo-link">
+        <img src="{{ pathto('_static/Logov2.png', 1) }}" class="logo" alt="{{ _('LAFVIN') }}"/>
     </a>
     {# 注释掉版本显示代码
     {% if theme_display_version %}
@@ -17,4 +17,4 @@
     {% endif %}
     #}
     {% include "searchbox.html" %}
-{% endblock %} 
+{% endblock %}

@@ -10,7 +10,7 @@
 from pygments.lexers import Python3Lexer
 import time
 
-project = 'LAFVIN 2.13Inch e-Paper HAT'
+project = 'LAFVIN 2.9inch e-Paper HAT'
 copyright = f'{time.localtime().tm_year}, Lafvin'
 author = 'LAFVIN'
 
@@ -41,11 +41,13 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 
-# html_static_path = ['_static']
-# html_logo = '_static/Logo2.png'
+html_static_path = ['_static']
+html_logo = '_static/Logov2.png'
+html_css_files = ['custom.css']
 
 html_theme_options = {
-     'logo_only': True,
+    'logo_only': True,
+    'style_nav_header_background': '#2077b0',
  }
 
  # multi-language docs

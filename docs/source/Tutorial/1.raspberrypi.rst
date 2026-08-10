@@ -133,8 +133,8 @@ If you have already downloaded the code, you can skip this step.
 
 .. code-block:: bash
 
-    git clone https://github.com/lafvintech/LAFVIN-2.13inch-ePaper-HAT.git
-    cd LAFVIN-2.13inch-ePaper-HAT/RaspberryPi
+    git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
+    cd LAFVIN-2.9inch-ePaper-HAT/RaspberryPi
 
 Compile the Demo Program
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,8 +220,8 @@ If you have already downloaded the code, you can skip this step.
 
 .. code-block:: bash
 
-    git clone https://github.com/lafvintech/LAFVIN-2.13inch-ePaper-HAT.git
-    cd LAFVIN-2.13inch-ePaper-HAT/RaspberryPi/python/examples
+    git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
+    cd LAFVIN-2.9inch-ePaper-HAT/RaspberryPi/python/examples
 
 Run the Demo Program
 ^^^^^^^^^^^^^^^^^^^^
@@ -237,8 +237,8 @@ Run the Demo Program
 
     .. code-block:: bash
 
-        wget https://github.com/lafvintech/LAFVIN-2.13inch-ePaper-HAT/archive/refs/heads/main.zip
+        wget https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
         unzip main.zip
-        cd LAFVIN-2.13inch-ePaper-HAT-main
+        cd LAFVIN-2.9inch-ePaper-HAT-main
 
-    Replace the path ``LAFVIN-2.13inch-ePaper-HAT`` with ``LAFVIN-2.13inch-ePaper-HAT-main`` in the commands that follow.
+    Replace the path ``LAFVIN-2.9inch-ePaper-HAT`` with ``LAFVIN-2.9inch-ePaper-HAT-main`` in the commands that follow.

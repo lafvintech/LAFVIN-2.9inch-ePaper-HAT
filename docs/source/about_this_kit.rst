@@ -3,19 +3,19 @@
 About This Kit
 ====================
 
-LAFVIN 2.13Inch e-Paper HAT
+LAFVIN 2.9inch e-Paper HAT
 -------------------------------
 
 .. figure:: ./Tutorial/img/main.jpg
    :align: center
    :width: 80%
 
-   *LAFVIN 2.13Inch e-Paper HAT*
+   *LAFVIN 2.9inch e-Paper HAT*
 
 Introduction
 ---------------
 
-This is 2.13inch E-Ink display HAT with Raspberry Pi 40PIN GPIO extension header, compatible with Raspberry Pi series boards.   250x122 resolution, Black and White Two Display colors, with embedded controller, communicating via SPI interface, supports partial refresh.
+This is 2.9inch E-Ink display HAT with Raspberry Pi 40PIN GPIO extension header, compatible with Raspberry Pi series boards.   250x122 resolution, Black and White Two Display colors, with embedded controller, communicating via SPI interface, supports partial refresh.
 
 No backlight, keeps displaying last content for a long time even when power down.    Ultra low power consumption, basically power is only required for refreshing.
 
@@ -34,7 +34,7 @@ Parameters
    * - Parameter
      - Specification
    * - Screen size
-     - 2.13inch
+     - 2.9inch
    * - Driver board dimensions
      - 69*30mm
    * - Display dimensions
