@@ -6,6 +6,10 @@
   --lafvin-nav: #263b46;
 }
 
+html {
+  font-size: 18px;
+}
+
 .wy-side-nav-search {
   background-color: var(--lafvin-blue);
   padding: 20px 10px 14px;
@@ -72,14 +76,46 @@
 .rst-content h5,
 .rst-content h6 {
   color: var(--lafvin-heading);
-  font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+/* Tutorial copy: a comfortable reading measure without loading external fonts. */
+.rst-content p,
+.rst-content li,
+.rst-content td,
+.rst-content th,
+.rst-content dd {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.rst-content p {
+  margin-bottom: 1.25em;
+}
+
+.rst-content ul,
+.rst-content ol {
+  margin-bottom: 1.25em;
+}
+
+.rst-content li + li {
+  margin-top: .45em;
+}
+
+.rst-content pre,
+.rst-content code {
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .rst-content h1 {
-  border-bottom: 3px solid var(--lafvin-blue);
-  font-size: 2.25em;
-  margin-bottom: 1.5em;
-  padding-bottom: .45em;
+  background: var(--lafvin-blue);
+  color: #fff;
+  font-size: 2.125em;
+  margin: 0 0 1.5em;
+  padding: .45em .65em;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
