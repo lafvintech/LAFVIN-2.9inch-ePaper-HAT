@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flash Raspberry Pi OS &mdash; LAFVIN 2.9inch e-Paper HAT  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=1144d92c" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working With Arduino" href="../Tutorial/2.arduino.html" />
+    <link rel="prev" title="Install Arduino IDE" href="../Appendix/arduino_ide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2077b0" >
+    <a href="../index.html" class="logo-link">
+        <img src="../_static/Logov2.png" class="logo" alt="LAFVIN"/>
+    </a>
+    
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PRODUCT OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SETUP &amp; PREPARATION</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Image/image_processing.html">Image Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/arduino_ide.html">Install Arduino IDE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Flash Raspberry Pi OS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-you-need">What You Need</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-software">Recommended Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-raspberry-pi-imager">Install Raspberry Pi Imager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choose-the-device-os-and-storage">Choose the Device, OS, and Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-os-customisation">Configure OS Customisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#write-and-verify-the-image">Write and Verify the Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-boot-on-raspberry-pi-5">First Boot on Raspberry Pi 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#official-references">Official References</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DEVELOPMENT GUIDES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/2.arduino.html">Working With Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/3.esp32.html">ESP32</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/1.raspberrypi.html">Raspberry Pi User Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RESOURCES &amp; SUPPORT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/resources.html">资源下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2077b0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAFVIN 2.9inch e-Paper HAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Flash Raspberry Pi OS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Setup/raspberry_pi_os.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="flash-raspberry-pi-os">
+<h1>Flash Raspberry Pi OS<a class="headerlink" href="#flash-raspberry-pi-os" title="Link to this heading"></a></h1>
+<p>This guide uses a Raspberry Pi 5 and the official Raspberry Pi imaging workflow.
+Complete the operating system setup before connecting or configuring the e-Paper HAT.</p>
+<section id="what-you-need">
+<h2>What You Need<a class="headerlink" href="#what-you-need" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Raspberry Pi 5 and a suitable USB-C power supply.</p></li>
+<li><p>A reliable microSD card (32 GB or larger is recommended) and a card reader.</p></li>
+<li><p>A Windows, macOS, or Linux computer connected to the internet.</p></li>
+<li><p>The official <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a>.</p></li>
+</ul>
+</section>
+<section id="recommended-software">
+<h2>Recommended Software<a class="headerlink" href="#recommended-software" title="Link to this heading"></a></h2>
+<p>The versions below were checked on 10 August 2026:</p>
+<ul class="simple">
+<li><p><strong>Raspberry Pi Imager 2.0.8</strong> — the latest stable release. Do not use the 2.0.9 pre-release for a new setup.</p></li>
+<li><p><strong>Raspberry Pi OS (64-bit)</strong> — the recommended current release for Raspberry Pi 5: Debian 13 (Trixie) with Linux kernel 6.18.</p></li>
+</ul>
+<p>Raspberry Pi Imager automatically offers the recommended operating system for the selected device, so downloading an <code class="docutils literal notranslate"><span class="pre">.img</span></code> file manually is not necessary.</p>
+</section>
+<section id="install-raspberry-pi-imager">
+<h2>Install Raspberry Pi Imager<a class="headerlink" href="#install-raspberry-pi-imager" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open the official <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi software page</a> and download Raspberry Pi Imager for your computer.</p></li>
+<li><p>Run the installer, then start <strong>Raspberry Pi Imager</strong>.</p></li>
+<li><p>Insert the microSD card into the computer’s card reader.</p></li>
+</ol>
+</section>
+<section id="choose-the-device-os-and-storage">
+<h2>Choose the Device, OS, and Storage<a class="headerlink" href="#choose-the-device-os-and-storage" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Select <strong>Choose Device</strong>, then select <strong>Raspberry Pi 5</strong>.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/device-tab.png"><img alt="Raspberry Pi Imager Device tab." src="../_images/device-tab.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">In the Device tab, select <strong>Raspberry Pi 5</strong>, then click <strong>Next</strong>.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Select <strong>Choose OS</strong> and choose <strong>Raspberry Pi OS (64-bit)</strong>. This is the recommended desktop image for Raspberry Pi 5.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/os-tab.png"><img alt="Raspberry Pi Imager OS tab." src="../_images/os-tab.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">The recommended Raspberry Pi OS for the selected device appears at the top of the list.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Insert the microSD card into the reader. Select <strong>Choose Storage</strong>, then select the target microSD card by its capacity and name.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/storage-tab.png"><img alt="Raspberry Pi Imager Storage tab." src="../_images/storage-tab.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">Keep <strong>Exclude system drives</strong> enabled and choose only the microSD card to be erased.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Writing an image erases the selected storage device. Check its capacity and name carefully before continuing. Disconnect other removable drives if you are unsure which one is the microSD card.</p>
+</div>
+</section>
+<section id="configure-os-customisation">
+<h2>Configure OS Customisation<a class="headerlink" href="#configure-os-customisation" title="Link to this heading"></a></h2>
+<p>Click <strong>Next</strong>, then choose <strong>Edit Settings</strong> when Imager offers OS customisation. Configure these settings before writing the card.</p>
+<ol class="arabic">
+<li><p>In <strong>Hostname</strong>, enter a short device name, such as <code class="docutils literal notranslate"><span class="pre">lafvin-pi5</span></code>. Use only letters, numbers, and hyphens. The device will later be available at <code class="docutils literal notranslate"><span class="pre">lafvin-pi5.local</span></code> on most local networks.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/hostname-subtab.png"><img alt="Raspberry Pi Imager hostname customisation tab." src="../_images/hostname-subtab.png" style="width: 85%;" /></a>
+</figure>
+</li>
+<li><p>In <strong>Localisation</strong>, select your city or set the time zone, keyboard layout, and wireless LAN country.</p></li>
+<li><p>In <strong>User</strong>, set a lowercase username and a strong password. These are required for SSH and <code class="docutils literal notranslate"><span class="pre">sudo</span></code> commands.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/user-subtab.png"><img alt="Raspberry Pi Imager user customisation tab." src="../_images/user-subtab.png" style="width: 85%;" /></a>
+</figure>
+</li>
+<li><p>In <strong>Wi-Fi</strong>, select the correct network, enter its password, and enable <strong>Hidden SSID</strong> only when the network name is not broadcast.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/wifi-subtab.png"><img alt="Raspberry Pi Imager Wi-Fi customisation tab." src="../_images/wifi-subtab.png" style="width: 85%;" /></a>
+</figure>
+</li>
+<li><p>In <strong>Remote Access</strong>, enable <strong>SSH</strong> if you will use the Pi without a monitor. Choose password authentication for a simple local setup, or public-key authentication for stronger security.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/ssh-subtab.png"><img alt="Raspberry Pi Imager remote access and SSH customisation tab." src="../_images/ssh-subtab.png" style="width: 85%;" /></a>
+</figure>
+</li>
+</ol>
+<p>Click <strong>Save</strong>, then choose <strong>Yes</strong> to apply the settings to the image.</p>
+</section>
+<section id="write-and-verify-the-image">
+<h2>Write and Verify the Image<a class="headerlink" href="#write-and-verify-the-image" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Review the selected device, operating system, storage device, and customisation settings. Click <strong>Write</strong> only when every item is correct.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/write.png"><img alt="Raspberry Pi Imager writing summary." src="../_images/write.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">The summary is the last opportunity to check the target storage device.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the erase confirmation dialog, select <strong>I understand, erase and write</strong>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/are-you-sure.png"><img alt="Raspberry Pi Imager erase confirmation dialog." src="../_images/are-you-sure.png" style="width: 85%;" /></a>
+</figure>
+</li>
+<li><p>Wait for Raspberry Pi Imager to finish both writing and verification. Do not remove the card during this process.</p></li>
+<li><p>When Imager reports <strong>Write Successful</strong>, safely eject the microSD card from the computer.</p></li>
+</ol>
+</section>
+<section id="first-boot-on-raspberry-pi-5">
+<h2>First Boot on Raspberry Pi 5<a class="headerlink" href="#first-boot-on-raspberry-pi-5" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Ensure the Raspberry Pi 5 is powered off.</p></li>
+<li><p>Insert the prepared microSD card, then connect a display, keyboard, and network cable if required.</p></li>
+<li><p>Connect power to boot the Pi. If OS customisation was used, the configured account and network settings are applied on first boot.</p></li>
+<li><p>After you reach the desktop or connect through SSH, update the system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+</li>
+<li><p>Power off the Pi before connecting the e-Paper HAT, then continue with <a class="reference internal" href="../Tutorial/1.raspberrypi.html"><span class="doc">Raspberry Pi User Guide</span></a>.</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>The Pi does not boot</strong>: confirm the card write completed verification, use a suitable power supply, and try writing the image again.</p></li>
+<li><p><strong>Wi-Fi is unavailable</strong>: recheck the SSID, password, wireless country, and whether the network is hidden.</p></li>
+<li><p><strong>SSH connection fails</strong>: confirm SSH was enabled during OS customisation and use the hostname or IP address shown by your router.</p></li>
+</ul>
+</section>
+<section id="official-references">
+<h2>Official References<a class="headerlink" href="#official-references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.raspberrypi.com/documentation/computers/getting-started.html">Install an operating system with Raspberry Pi Imager</a></p></li>
+<li><p><a class="reference external" href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS downloads and release information</a></p></li>
+<li><p><a class="reference external" href="https://github.com/raspberrypi/rpi-imager/releases">Raspberry Pi Imager releases</a></p></li>
+<li><p><a class="reference external" href="https://github.com/raspberrypi/documentation/blob/master/documentation/asciidoc/computers/getting-started/install.adoc">Official Raspberry Pi Imager interface screenshots</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Appendix/arduino_ide.html" class="btn btn-neutral float-left" title="Install Arduino IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Tutorial/2.arduino.html" class="btn btn-neutral float-right" title="Working With Arduino" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Lafvin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

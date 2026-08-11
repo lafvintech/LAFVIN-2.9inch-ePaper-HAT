@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Pi User Guide &mdash; LAFVIN 2.9inch e-Paper HAT  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=1144d92c" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="资源下载" href="../Resources/resources.html" />
+    <link rel="prev" title="ESP32" href="3.esp32.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2077b0" >
+    <a href="../index.html" class="logo-link">
+        <img src="../_static/Logov2.png" class="logo" alt="LAFVIN"/>
+    </a>
+    
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PRODUCT OVERVIEW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about_this_kit.html">About This Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SETUP &amp; PREPARATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Image/image_processing.html">Image Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/arduino_ide.html">Install Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup/raspberry_pi_os.html">Flash Raspberry Pi OS</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DEVELOPMENT GUIDES</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="2.arduino.html">Working With Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.esp32.html">ESP32</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-connection">Hardware Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enable-spi-interface">Enable SPI Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-language">C Language</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-lg-library">Install lg Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-gpiod-library-if-needed">Install gpiod Library If Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-bcm2835-if-needed">Install BCM2835 If Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-wiringpi-if-needed">Install WiringPi If Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-demo-code">Download Demo Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-the-demo-program">Compile the Demo Program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-demo-program">Run the Demo Program</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-libraries-for-python-3">Install Libraries for Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-libraries-for-python-2">Install Libraries for Python 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-gpiozero-library">Install gpiozero Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Download Demo Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Run the Demo Program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RESOURCES &amp; SUPPORT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/resources.html">资源下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2077b0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAFVIN 2.9inch e-Paper HAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Raspberry Pi User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Tutorial/1.raspberrypi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="raspberry-pi-user-guide">
+<span id="raspberrypi"></span><h1>Raspberry Pi User Guide<a class="headerlink" href="#raspberry-pi-user-guide" title="Link to this heading"></a></h1>
+<section id="hardware-connection">
+<h2>Hardware Connection<a class="headerlink" href="#hardware-connection" title="Link to this heading"></a></h2>
+<p>Insert the e-Paper HAT directly into the Raspberry Pi 40-pin GPIO header, and make sure all pins are aligned correctly before powering on.</p>
+</section>
+<section id="enable-spi-interface">
+<h2>Enable SPI Interface<a class="headerlink" href="#enable-spi-interface" title="Link to this heading"></a></h2>
+<p>Open the Raspberry Pi terminal and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>raspi-config
+<span class="c1"># Select Interfacing Options -&gt; SPI -&gt; Yes to enable the SPI interface</span>
+</pre></div>
+</div>
+<img alt="../_images/rpi_SPI1.png" src="../_images/rpi_SPI1.png" />
+<img alt="../_images/rpi_SPI2.png" src="../_images/rpi_SPI2.png" />
+<img alt="../_images/rpi_SPI3.png" src="../_images/rpi_SPI3.png" />
+<p>Then restart your Raspberry Pi:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot<span class="w"> </span>now
+</pre></div>
+</div>
+<p>Check <code class="docutils literal notranslate"><span class="pre">/boot/config.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">/boot/firmware/config.txt</span></code> to confirm that SPI is enabled:</p>
+<img alt="../_images/rpi_SPI4.png" src="../_images/rpi_SPI4.png" />
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cat<span class="w"> </span>/boot/config.txt
+<span class="c1"># Or for newer systems</span>
+sudo<span class="w"> </span>cat<span class="w"> </span>/boot/firmware/config.txt
+</pre></div>
+</div>
+<p>Choose a demo language:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#raspberrypi-c"><span class="std std-ref">C Language</span></a></p></li>
+<li><p><a class="reference internal" href="#raspberrypi-python"><span class="std std-ref">Python</span></a></p></li>
+</ul>
+</section>
+<section id="c-language">
+<span id="raspberrypi-c"></span><h2>C Language<a class="headerlink" href="#c-language" title="Link to this heading"></a></h2>
+<section id="install-lg-library">
+<h3>Install lg Library<a class="headerlink" href="#install-lg-library" title="Link to this heading"></a></h3>
+<p>Open the Raspberry Pi terminal and run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/joan2937/lg/archive/master.zip
+unzip<span class="w"> </span>master.zip
+<span class="nb">cd</span><span class="w"> </span>lg-master
+make
+sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>For more details, refer to the source code: <a class="reference external" href="https://github.com/gpiozero/lg">https://github.com/gpiozero/lg</a></p>
+<p>On Raspberry Pi OS, installing the <code class="docutils literal notranslate"><span class="pre">lg</span></code> library is usually enough to run the C demo.
+If the demo fails to compile or run, install the additional libraries below as needed.</p>
+</section>
+<section id="install-gpiod-library-if-needed">
+<h3>Install gpiod Library If Needed<a class="headerlink" href="#install-gpiod-library-if-needed" title="Link to this heading"></a></h3>
+<p>Open the Raspberry Pi terminal and run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gpiod<span class="w"> </span>libgpiod-dev
+</pre></div>
+</div>
+</section>
+<section id="install-bcm2835-if-needed">
+<h3>Install BCM2835 If Needed<a class="headerlink" href="#install-bcm2835-if-needed" title="Link to this heading"></a></h3>
+<p>Open the Raspberry Pi terminal and run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz
+tar<span class="w"> </span>zxvf<span class="w"> </span>bcm2835-1.71.tar.gz
+<span class="nb">cd</span><span class="w"> </span>bcm2835-1.71/
+sudo<span class="w"> </span>./configure<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>check<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>For more information, refer to the official website: <a class="reference external" href="http://www.airspayce.com/mikem/bcm2835/">http://www.airspayce.com/mikem/bcm2835/</a></p>
+</section>
+<section id="install-wiringpi-if-needed">
+<h3>Install WiringPi If Needed<a class="headerlink" href="#install-wiringpi-if-needed" title="Link to this heading"></a></h3>
+<p>Open the Raspberry Pi terminal and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>wiringpi
+</pre></div>
+</div>
+<p>For Raspberry Pi systems released after May 2019, you may need to upgrade WiringPi. Earlier systems may not require this step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://project-downloads.drogon.net/wiringpi-latest.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>wiringpi-latest.deb
+gpio<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>Running <code class="docutils literal notranslate"><span class="pre">gpio</span> <span class="pre">-v</span></code> should display version 2.52. If it does not, the installation was not successful.</p>
+<p>For Bullseye systems, use the following commands instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WiringPi/WiringPi
+<span class="nb">cd</span><span class="w"> </span>WiringPi
+./build
+gpio<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>Running <code class="docutils literal notranslate"><span class="pre">gpio</span> <span class="pre">-v</span></code> should display version 2.60. If it does not, the installation was not successful.</p>
+</section>
+<section id="download-demo-code">
+<h3>Download Demo Code<a class="headerlink" href="#download-demo-code" title="Link to this heading"></a></h3>
+<p>If you have already downloaded the code, you can skip this step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
+<span class="nb">cd</span><span class="w"> </span>LAFVIN-2.9inch-ePaper-HAT/RaspberryPi
+</pre></div>
+</div>
+</section>
+<section id="compile-the-demo-program">
+<h3>Compile the Demo Program<a class="headerlink" href="#compile-the-demo-program" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Raspberry Pi OS, try compiling after installing only the <code class="docutils literal notranslate"><span class="pre">lg</span></code> library first.
+If you encounter missing dependency errors, return to the optional library steps above and install the required packages.
+<code class="docutils literal notranslate"><span class="pre">-j4</span></code> uses 4 threads for compilation, and you can adjust the number as needed.
+<code class="docutils literal notranslate"><span class="pre">EPD=epd2in13V4</span></code> specifies the macro definition used by the test demo in the main function.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>c
+sudo<span class="w"> </span>make<span class="w"> </span>clean
+sudo<span class="w"> </span>make<span class="w"> </span>-j4<span class="w"> </span><span class="nv">EPD</span><span class="o">=</span>epd2in13V4
+</pre></div>
+</div>
+</section>
+<section id="run-the-demo-program">
+<h3>Run the Demo Program<a class="headerlink" href="#run-the-demo-program" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./epd
+</pre></div>
+</div>
+</section>
+</section>
+<section id="python">
+<span id="raspberrypi-python"></span><h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<section id="install-libraries-for-python-3">
+<h3>Install Libraries for Python 3<a class="headerlink" href="#install-libraries-for-python-3" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-pip
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-pil
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-numpy
+</pre></div>
+</div>
+<p>If you encounter a <code class="docutils literal notranslate"><span class="pre">spidev</span></code>-related error while running the demo, install it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>spidev
+</pre></div>
+</div>
+<p>You can continue without installing it first. If an error occurs during execution, install it at that time.</p>
+</section>
+<section id="install-libraries-for-python-2">
+<h3>Install Libraries for Python 2<a class="headerlink" href="#install-libraries-for-python-2" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python-pip
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python-pil
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python-numpy
+</pre></div>
+</div>
+<p>If you encounter a <code class="docutils literal notranslate"><span class="pre">spidev</span></code>-related error while running the demo, install it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>spidev
+</pre></div>
+</div>
+<p>You can continue without installing it first. If an error occurs during execution, install it at that time.</p>
+</section>
+<section id="install-gpiozero-library">
+<h3>Install gpiozero Library<a class="headerlink" href="#install-gpiozero-library" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This library is installed by default on most systems. If it is missing, install it with the following commands:</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<span class="c1"># Python 3</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-gpiozero
+<span class="c1"># Python 2</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python-gpiozero
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Download Demo Code<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>If you have already downloaded the code, you can skip this step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
+<span class="nb">cd</span><span class="w"> </span>LAFVIN-2.9inch-ePaper-HAT/RaspberryPi/python/examples
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Run the Demo Program<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>python3<span class="w"> </span>epd_2in13_V4_test.py
+</pre></div>
+</div>
+<div class="admonition note" id="unzip-code">
+<p class="admonition-title">Note</p>
+<p>If you cannot download the code from GitHub, you can use the following commands to download the ZIP file and extract it. The remaining steps are the same as above.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
+unzip<span class="w"> </span>main.zip
+<span class="nb">cd</span><span class="w"> </span>LAFVIN-2.9inch-ePaper-HAT-main
+</pre></div>
+</div>
+<p>Replace the path <code class="docutils literal notranslate"><span class="pre">LAFVIN-2.9inch-ePaper-HAT</span></code> with <code class="docutils literal notranslate"><span class="pre">LAFVIN-2.9inch-ePaper-HAT-main</span></code> in the commands that follow.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3.esp32.html" class="btn btn-neutral float-left" title="ESP32" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Resources/resources.html" class="btn btn-neutral float-right" title="资源下载" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Lafvin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
