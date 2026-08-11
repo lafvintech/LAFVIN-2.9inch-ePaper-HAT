@@ -1,4 +1,0 @@
-:orphan:
-
-Development Guides
-==================
