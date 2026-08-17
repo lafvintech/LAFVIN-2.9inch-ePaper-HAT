@@ -19,7 +19,7 @@ UBYTE DEV_Module_Init(void)
 
 void DEV_SPI_Init(void)
 {
-    SPI.begin(EPD_SCK_PIN, -1, EPD_MOSI_PIN, EPD_CS_PIN);
+    SPI.begin();
     SPI.beginTransaction(SPISettings(EPD_SPI_FREQUENCY, MSBFIRST, SPI_MODE0));
 }
 
