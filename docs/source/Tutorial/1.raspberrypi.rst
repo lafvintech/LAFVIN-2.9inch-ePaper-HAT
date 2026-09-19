@@ -8,6 +8,47 @@ Hardware Connection
 
 Insert the e-Paper HAT directly into the Raspberry Pi 40-pin GPIO header, and make sure all pins are aligned correctly before powering on.
 
+Because this is a HAT, no jumper wires are required for the Raspberry Pi. The
+table below records the **on-board J1 mapping** from the module schematic for
+reference. GPIO numbers use BCM numbering; the reference driver uses SPI0 CE0
+at 4 MHz.
+
+.. list-table:: Raspberry Pi Pin Correspondence Table
+   :header-rows: 1
+   :widths: 30 45 25
+   :class: longtable
+
+   * - E-paper module pin
+     - Raspberry Pi signal
+     - Physical pin
+   * - Module power
+     - Raspberry Pi 5 V rail
+     - Pin 2
+   * - Logic reference
+     - Raspberry Pi 3.3 V rail
+     - Pin 1
+   * - GND
+     - GND
+     - Pin 6
+   * - DIN / MOSI
+     - GPIO10 / SPI0 MOSI
+     - Pin 19
+   * - CLK / SCK
+     - GPIO11 / SPI0 SCLK
+     - Pin 23
+   * - CS
+     - GPIO8 / SPI0 CE0
+     - Pin 24
+   * - DC
+     - GPIO25
+     - Pin 22
+   * - RST
+     - GPIO17
+     - Pin 11
+   * - BUSY
+     - GPIO24
+     - Pin 18
+
 .. .. image:: img/rpi_pin.jpg
 
 .. .. image:: img/rpi_zero_pin.png

@@ -1,10 +1,10 @@
 .. _about_this_kit:
 
 About This Kit
-====================
+==============
 
 LAFVIN 2.9inch e-Paper HAT
--------------------------------
+--------------------------
 
 .. figure:: ./Tutorial/img/main.jpg
    :align: center
@@ -13,67 +13,94 @@ LAFVIN 2.9inch e-Paper HAT
    *LAFVIN 2.9inch e-Paper HAT*
 
 Introduction
----------------
+------------
 
-This is 2.9inch E-Ink display HAT with Raspberry Pi 40PIN GPIO extension header, compatible with Raspberry Pi series boards.   250x122 resolution, Black and White Two Display colors, with embedded controller, communicating via SPI interface, supports partial refresh.
+This is 2.9inch E-Ink display HAT with Raspberry Pi 40PIN GPIO extension header,
+compatible with Raspberry Pi series boards. It uses a 128 x 296 four-colour
+display (black, white, red, and yellow), with embedded controller,
+communicating via SPI interface.
 
-No backlight, keeps displaying last content for a long time even when power down.    Ultra low power consumption, basically power is only required for refreshing.
+No backlight, keeps displaying last content for a long time even when power down.
+Ultra low power consumption, basically power is only required for refreshing.
 
-SPI interface, for connecting with controller boards likeArduino/ESP32, etc.    Onboard voltage translator, compatible with 3.3V / 5V MCUs.
+SPI interface, for connecting with controller boards like Arduino/ESP32, etc.
+Onboard voltage translator, compatible with 3.3V / 5V MCUs.
 
-Comes with online development resources and manual (driver board circuit diagram, examples for Raspberry Pi)
+Comes with online development resources and manual (driver board circuit
+diagram, examples for Raspberry Pi)
 
 Parameters
---------------
+----------
 
-.. list-table:: 
+The display-related values below are updated from the GDEY029F52 Product
+Specifications, revision 1.0 (2025-06-12). Module-level board dimensions,
+external supply, and standby-current values remain module specifications.
+
+.. list-table::
    :header-rows: 1
    :widths: 40 60
    :class: longtable
 
    * - Parameter
      - Specification
+   * - Model
+     - GDEY029F52
    * - Screen size
-     - 2.9inch
+     - 2.9 inch
    * - Driver board dimensions
-     - 69*30mm
+     - 69 x 30 mm
    * - Display dimensions
-     - 48.55mm × 23.71mm
-   * - Outline dimensions(screen only)
-     - 59.2mm × 29.2mm × 1.05mm
+     - 29.056 mm x 66.896 mm
+   * - Outline dimensions (panel only)
+     - 36.7 mm (H) x 79.0 mm (V) x 1.2 mm (D)
    * - Operating voltage
-     - 3.3V/5V(5V is required for power supply and signal)
+     - 3.3V/5V (5V is required for power supply and signal)
    * - Communication interface
      - SPI
    * - Dot pitch
-     - 0.194mm × 0.194mm
+     - 0.226 mm (H) x 0.227 mm (V)
    * - Resolution
-     - 250 x 122
-   * - Display color
-     - Black, white
-   * - Grey scale
-     - 2
+     - 128 x 296
+   * - Display colour
+     - Black, white, red, yellow
    * - Refresh time
-     - 2s
+     - Full: 26 s; fast: 11 s, at 25 deg C
    * - Refresh power
-     - 26.4mW (typ.)
+     - 26.4 mW (typ.)
    * - Standby current
-     - < 0.01uA (almost none)
+     - < 0.01 uA (almost none)
    * - Operating temperature
-     - 0 ~ 50 ℃
+     - 0 to 40 deg C
    * - Storage temperature
-     - -25 ~ 70 ℃
+     - -25 to 70 deg C
 
 .. note::
 
-    - **Refresh time**: The refresh time is the experimental results, the actual refresh time will have errors, and the actual effect shall prevail. There will be a flickering effect during the global refresh process, this is a normal phenomenon.
-          
-    - **Refresh power consumption**: The power consumption data is the experimental results. The actual power consumption will have a certain error due to the existence of the driver board and the actual use situation. The actual effect shall prevail.
-          
-    - **Low temperature operation**: Refresh in a low temperature environment may appear color cast, it need to be static in the environment of 25℃ for 6 hours before refresh.
+   The resolution, dimensions, pixel pitch, display colours, refresh time, and
+   temperature range are panel specifications. The remaining module-level
+   values must follow the product hardware documentation.
+
+Module Hardware
+---------------
+
+The module schematic (``2.9inch e-paper_V1.4``) confirms that the
+GDEY029F52 panel's 24-pin FPC is connected **inside the HAT**. Users do not
+wire the FPC directly. The module provides two host-side connections:
+
+- **Raspberry Pi 40-pin header (J1):** plugs directly into the Raspberry Pi.
+  The HAT is powered from the Raspberry Pi's 5 V rail and uses the Pi's 3.3 V
+  rail as the logic reference.
+- **External 8-pin header (H1):** ``VCC_INT``, ``GND``, ``DIN``, ``CLK``,
+  ``CS``, ``D/C``, ``RST``, and ``BUSY`` for external hosts such as Arduino
+  and ESP32.
+
+The schematic includes a 3.3 V regulator and a TXB0108 level translator
+between the host-side signals and the panel controller. This is the basis for
+the module's 3.3 V / 5 V MCU compatibility; it does not change the raw panel's
+own 3.3 V logic requirement.
 
 Communication Protocol
------------------------
+----------------------
 
 .. figure:: ./Tutorial/img/spi_com.png
    :align: center
@@ -90,41 +117,27 @@ Communication Protocol
 Note: For specific information about SPI communication, you can search for information online on your own.
 
 Working Principle
---------------------
+-----------------
 
-The e-paper used in this product uses "microcapsule electrophoresis display" technology for image display. The basic principle is that charged nanoparticles suspended in a liquid migrate under the action of an electric field. The e-paper display screen displays patterns by reflecting ambient light and does not require a backlight. Under ambient light, the e-paper display screen is clearly visible, with a viewing angle of almost 180°. Therefore, e-paper displays are ideal for reading.
+The e-paper used in this product uses "microcapsule electrophoresis display" technology for image display. The basic principle is that charged nanoparticles suspended in a liquid migrate under the action of an electric field. The e-paper display screen displays patterns by reflecting ambient light and does not require a backlight. Under ambient light, the e-paper display screen is clearly visible, with a viewing angle of almost 180 degrees. Therefore, e-paper displays are ideal for reading.
 
 Program Principle
---------------------
+-----------------
 
-- We define the pixels in a monochrome picture, 0 is black and 1 is white.
-      
-  - White: □, Bit 1
-        
-  - Black: ■, Bit 0
-        
-- The dot in the figure is called a pixel. As we know, 1 and 0 are used to define the color, therefore we can use one bit to define the color of one pixel, and 1 byte = 8 pixels
-      
-- For example, If we set the first 8 pixels to black and the last 8 pixels to white, we show it by codes, they will be 16 bit as below:
-      
-.. figure:: ./Tutorial/img/E-paper_hardware_work_1.png
-   :align: center
-   :width: 70%
-   
-   *Pixel Representation Example*
+GDEY029F52 is a four-colour panel. Its image data and update waveform are
+panel-specific, so the former monochrome rule of one bit per pixel (black or
+white) must not be used. Generate image data with the GDEY029F52-compatible
+driver library, using its documented colour constants and buffer format for
+black, white, red, and yellow. Set the image canvas to **128 x 296 pixels**
+(or the rotated orientation explicitly supported by that library).
 
-- For computer, the data is saved in MSB format:
-      
-.. figure:: ./Tutorial/img/E-paper_hardware_work_2.png
-   :align: center
-   :width: 70%
-   
-   *MSB Data Format*
-
-So we can use two bytes for 16 pixels.
+Typical update flow is: reset the panel, wait until ``BUSY_N`` is high, send
+the panel-specific initialisation and image data, power on, trigger display
+refresh, wait until ``BUSY_N`` is high again, then power off and enter deep
+sleep. The specification identifies ``0xA5`` as the deep-sleep command.
 
 Precautions
-------------
+-----------
 
 .. role:: red
    :class: red
@@ -155,25 +168,17 @@ Precautions
    .red {
      color: red;
      font-weight: bold;
-   }
-   .longtable td {
-     padding: 8px;
-   }
-   
-   /* 增加列表项间距 */
-   ol li {
-     margin-bottom: 15px;
-     line-height: 1.5;
-   }
-   
-   /* 为红色文本增加额外的间距 */
-   .red {
      display: block;
      margin-bottom: 8px;
      line-height: 1.6;
    }
-   
-   /* 为普通文本增加间距 */
+   .longtable td {
+     padding: 8px;
+   }
+   ol li {
+     margin-bottom: 15px;
+     line-height: 1.5;
+   }
    p {
      line-height: 1.5;
      margin-bottom: 10px;

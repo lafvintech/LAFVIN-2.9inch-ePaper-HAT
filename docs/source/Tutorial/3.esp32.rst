@@ -1,2 +1,65 @@
 ESP32
 =====
+
+Hardware Connection
+-------------------
+
+Use the module's 8-pin header. The LAFVIN-EPD examples provide a default
+ESP32-S3 profile and an alternate classic ESP32 profile; both use 4 MHz SPI.
+
+ESP32-S3 (default)
+^^^^^^^^^^^^^^^^^^^
+
+.. list-table:: ESP32-S3 Pin Correspondence Table
+   :header-rows: 1
+   :widths: 45 55
+   :class: longtable
+
+   * - E-paper module pin
+     - ESP32-S3 GPIO
+   * - VCC
+     - VCC_INT (module 5 V supply)
+   * - GND
+     - GND
+   * - DIN / MOSI
+     - GPIO41
+   * - CLK / SCK
+     - GPIO42
+   * - CS
+     - GPIO4
+   * - DC
+     - GPIO5
+   * - RST
+     - GPIO35
+   * - BUSY
+     - GPIO36
+
+Classic ESP32
+^^^^^^^^^^^^^
+
+.. list-table:: Classic ESP32 Pin Correspondence Table
+   :header-rows: 1
+   :widths: 45 55
+   :class: longtable
+
+   * - E-paper module pin
+     - ESP32 GPIO
+   * - VCC
+     - VCC_INT (module 5 V supply)
+   * - GND
+     - GND
+   * - DIN / MOSI
+     - GPIO2
+   * - CLK / SCK
+     - GPIO4
+   * - CS
+     - GPIO5
+   * - DC
+     - GPIO18
+   * - RST
+     - GPIO19
+   * - BUSY
+     - GPIO21
+
+For classic ESP32, select ``EPD_BOARD_ESP32_CLASSIC`` instead of the default
+``EPD_BOARD_ESP32_S3`` profile in the matching LAFVIN-EPD board configuration.

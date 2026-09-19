@@ -4,44 +4,37 @@ Working With Arduino
 ======================
 
 Hardware Connection
----------------------
+-------------------
 
-Use an 8PIN cable to connect, please refer to the pin correspondence table below:
+Use an 8PIN cable to connect. The default wiring below follows the
+``LAFVIN-EPD`` reference repository:
 
-.. list-table:: Pin Correspondence Table
+.. list-table:: Arduino wiring (LAFVIN-EPD default)
    :header-rows: 1
-   :widths: 20 40 40
+   :widths: 40 60
    :class: longtable
 
-   * - e-Paper
-     - Arduino UNO
-     - Mega2560
+   * - E-paper module pin
+     - Arduino pin
    * - VCC
-     - 5V
-     - 5V
+     - VCC_INT (module 5 V supply)
    * - GND
      - GND
-     - GND
-   * - DIN
+   * - DIN / MOSI
      - D11
-     - D51
-   * - CLK
+   * - CLK / SCK
      - D13
-     - D52
    * - CS
-     - D10
-     - D10
+     - D7
    * - DC
-     - D9
-     - D9
+     - D6
    * - RST
-     - D8
-     - D8
+     - D5
    * - BUSY
-     - D7
-     - D7
+     - D4
 
-.. .. image:: img/arduino_pin.jpg
+The module regulates the supply internally and level-translates the host
+signals. The reference driver sets the SPI frequency to 4 MHz.
 
 Install Arduino IDE
 ---------------------
