@@ -1,4 +1,4 @@
-LAFVIN 2.9inch e-Paper HAT
+LAFVIN 2.9 inch E-paper Module
 ========================================
 
 .. toctree::

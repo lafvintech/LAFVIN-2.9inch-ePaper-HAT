@@ -2,7 +2,8 @@ Flash Raspberry Pi OS
 =====================
 
 This guide uses a Raspberry Pi 5 and the official Raspberry Pi imaging workflow.
-Complete the operating system setup before connecting or configuring the e-Paper HAT.
+Complete the operating system setup before connecting or configuring the
+LAFVIN 2.9 inch E-paper Module.
 
 What You Need
 -------------
@@ -136,7 +137,8 @@ First Boot on Raspberry Pi 5
       sudo apt full-upgrade -y
       sudo reboot
 
-5. Power off the Pi before connecting the e-Paper HAT, then continue with :doc:`../Tutorial/1.raspberrypi`.
+5. Power off the Pi before connecting the LAFVIN 2.9 inch E-paper Module,
+   then continue with :doc:`../Tutorial/1.raspberrypi`.
 
 Troubleshooting
 ---------------

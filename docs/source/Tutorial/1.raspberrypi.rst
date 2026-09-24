@@ -6,12 +6,14 @@ Raspberry Pi User Guide
 Hardware Connection
 -------------------
 
-Insert the e-Paper HAT directly into the Raspberry Pi 40-pin GPIO header, and make sure all pins are aligned correctly before powering on.
+Insert the LAFVIN 2.9 inch E-paper Module directly into the Raspberry Pi
+40-pin GPIO header, and make sure all pins are aligned correctly before
+powering on.
 
-Because this is a HAT, no jumper wires are required for the Raspberry Pi. The
-table below records the **on-board J1 mapping** from the module schematic for
-reference. GPIO numbers use BCM numbering; the reference driver uses SPI0 CE0
-at 4 MHz.
+Because the module connects directly through the Raspberry Pi's 40-pin header,
+no jumper wires are required. The table below records the **on-board J1
+mapping** for reference. GPIO numbers use BCM numbering; the reference driver
+uses SPI0 CE0 at 4 MHz.
 
 .. list-table:: Raspberry Pi Pin Correspondence Table
    :header-rows: 1

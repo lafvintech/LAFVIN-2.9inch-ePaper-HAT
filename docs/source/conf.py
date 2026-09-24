@@ -10,7 +10,7 @@
 from pygments.lexers import Python3Lexer
 import time
 
-project = 'LAFVIN 2.9inch e-Paper HAT'
+project = 'LAFVIN 2.9 inch E-paper Module'
 copyright = f'{time.localtime().tm_year}, Lafvin'
 author = 'LAFVIN'
 
