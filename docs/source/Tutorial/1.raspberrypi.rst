@@ -10,11 +10,6 @@ Insert the LAFVIN 2.9 inch E-paper Module directly into the Raspberry Pi
 40-pin GPIO header, and make sure all pins are aligned correctly before
 powering on.
 
-Because the module connects directly through the Raspberry Pi's 40-pin header,
-no jumper wires are required. The table below records the **on-board J1
-mapping** for reference. GPIO numbers use BCM numbering; the reference driver
-uses SPI0 CE0 at 4 MHz.
-
 .. list-table:: Raspberry Pi Pin Correspondence Table
    :header-rows: 1
    :widths: 30 45 25
@@ -23,23 +18,20 @@ uses SPI0 CE0 at 4 MHz.
    * - E-paper module pin
      - Raspberry Pi signal
      - Physical pin
-   * - Module power
-     - Raspberry Pi 5 V rail
-     - Pin 2
-   * - Logic reference
-     - Raspberry Pi 3.3 V rail
+   * - VCC
+     - 3.3V
      - Pin 1
    * - GND
      - GND
      - Pin 6
    * - DIN / MOSI
-     - GPIO10 / SPI0 MOSI
+     - GPIO10
      - Pin 19
    * - CLK / SCK
-     - GPIO11 / SPI0 SCLK
+     - GPIO11
      - Pin 23
    * - CS
-     - GPIO8 / SPI0 CE0
+     - GPIO8
      - Pin 24
    * - DC
      - GPIO25

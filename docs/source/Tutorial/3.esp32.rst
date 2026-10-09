@@ -18,7 +18,7 @@ ESP32-S3 (default)
    * - E-paper module pin
      - ESP32-S3 GPIO
    * - VCC
-     - VCC_INT (module 5 V supply)
+     - 3.3V
    * - GND
      - GND
    * - DIN / MOSI
@@ -45,7 +45,7 @@ Classic ESP32
    * - E-paper module pin
      - ESP32 GPIO
    * - VCC
-     - VCC_INT (module 5 V supply)
+     - 3.3V
    * - GND
      - GND
    * - DIN / MOSI

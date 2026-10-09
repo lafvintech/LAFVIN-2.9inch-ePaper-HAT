@@ -6,11 +6,10 @@ About This Kit
 LAFVIN 2.9 inch E-paper Module
 ------------------------------
 
-.. figure:: ./Tutorial/img/main.jpg
+.. figure:: ./Product/img/module-cropped.png
    :align: center
-   :width: 80%
-
-   *LAFVIN 2.9 inch E-paper Module*
+   :width: 75%
+   :alt: Front view of the LAFVIN 2.9-inch four-colour e-paper module.
 
 Introduction
 ------------
@@ -43,32 +42,29 @@ Parameters
      - GDEY029F52
    * - Screen size
      - 2.9 inch
-   * - Driver board dimensions
-     - 69 x 30 mm
+   * - Module footprint
+     - 90.5 x 38 mm
    * - Display dimensions
      - 29.056 mm x 66.896 mm
-   * - Outline dimensions (panel only)
-     - 36.7 mm (H) x 79.0 mm (V) x 1.2 mm (D)
    * - Operating voltage
      - 3.3V/5V (5V is required for power supply and signal)
    * - Communication interface
      - SPI
-   * - Dot pitch
-     - 0.226 mm (H) x 0.227 mm (V)
    * - Resolution
      - 128 x 296
    * - Display colour
      - Black, white, red, yellow
    * - Refresh time
      - Full: 26 s; fast: 11 s, at 25 deg C
-   * - Refresh power
-     - 26.4 mW (typ.)
-   * - Standby current
-     - < 0.01 uA (almost none)
    * - Operating temperature
      - 0 to 40 deg C
    * - Storage temperature
      - -25 to 70 deg C
+
+.. figure:: ./Product/img/dimensions-cropped.png
+   :align: center
+   :width: 75%
+   :alt: Overall module footprint of 90.5 by 38 millimetres and display area dimensions.
 
 
 
@@ -78,14 +74,6 @@ Communication Protocol
 .. figure:: ./Tutorial/img/spi_com.png
    :align: center
    :width: 70%
-   
-   *SPI Communication Interface*
-
-- **CSB (CS)**: Slave chip select signal, active at low level. When it is at low level, the chip is enabled.
-- **SCL (SCK/SCLK)**: Serial clock signal.
-- **D/C (DC)**: Data/command control signal, write command (Command) when the level is low; write data (Data/parameter) when the level is high.
-- **SDA (DIN)**: Serial data signal.
-- **Timing**: CPHL=0, CPOL=0, i.e. SPI mode 0.
 
 Note: For specific information about SPI communication, you can search for information online on your own.
 
@@ -93,21 +81,6 @@ Working Principle
 -----------------
 
 The e-paper used in this product uses "microcapsule electrophoresis display" technology for image display. The basic principle is that charged nanoparticles suspended in a liquid migrate under the action of an electric field. The e-paper display screen displays patterns by reflecting ambient light and does not require a backlight. Under ambient light, the e-paper display screen is clearly visible, with a viewing angle of almost 180 degrees. Therefore, e-paper displays are ideal for reading.
-
-Program Principle
------------------
-
-GDEY029F52 is a four-colour panel. Its image data and update waveform are
-panel-specific, so the former monochrome rule of one bit per pixel (black or
-white) must not be used. Generate image data with the GDEY029F52-compatible
-driver library, using its documented colour constants and buffer format for
-black, white, red, and yellow. Set the image canvas to **128 x 296 pixels**
-(or the rotated orientation explicitly supported by that library).
-
-Typical update flow is: reset the panel, wait until ``BUSY_N`` is high, send
-the panel-specific initialisation and image data, power on, trigger display
-refresh, wait until ``BUSY_N`` is high again, then power off and enter deep
-sleep. The specification identifies ``0xA5`` as the deep-sleep command.
 
 Precautions
 -----------
@@ -123,17 +96,15 @@ Precautions
 
 4. **Sleep Mode**: After the screen enters sleep mode, the sent image data will be ignored, and it can be refreshed normally only after initializing again.
       
-5. **Border Color Adjustment**: Control the 0x3C or 0x50 (refer to the datasheet for details) register to adjust the border color. In the demo, you can adjust the Border Waveform Control register or VCOM AND DATA INTERVAL SETTING to set the border.
+5. **Image Display Issues**: If you find that the created image data is displayed incorrectly on the screen, it is recommended to check whether the image size setting is correct, change the width and height settings of the image and try again.
       
-6. **Image Display Issues**: If you find that the created image data is displayed incorrectly on the screen, it is recommended to check whether the image size setting is correct, change the width and height settings of the image and try again.
-      
-7. **Voltage Compatibility**: The working voltage of the e-Paper display is 3.3V. If you buy the raw panel, you need to add a level convert circuit for compatibility with 5V voltage. The new version of the driver board (V2.1 and subsequent versions) has been added a level processing circuit, which can support both 3.3V and 5V. The old version only supports a 3.3V working environment. You can confirm the version before using it. (The one with the 20-pin chip on the PCB is generally the new version. And the version number is under the board name.)
-      
-8. :red:`Cable Handling: The FPC cable of the screen is fragile, Please note: Do not bend the cable along the vertical direction of the screen to avoid tearing the cable; Do not repeatedly excessive bending line to avoid line fracture; Do not bend the cable toward the front of the screen to prevent the cable from being disconnected from the panel. It is recommended to use after fixing the cable during debugging and development.`
+6. :red:`Cable Handling: The FPC cable of the screen is fragile, Please note: Do not bend the cable along the vertical direction of the screen to avoid tearing the cable; Do not repeatedly excessive bending line to avoid line fracture; Do not bend the cable toward the front of the screen to prevent the cable from being disconnected from the panel. It is recommended to use after fixing the cable during debugging and development.`
 
-9. :red:`Screen Fragility: The screen of e-Paper is relatively fragile, please try to avoid dropping, bumping and pressing hard.`
+7. :red:`Screen Fragility: The screen of e-Paper is relatively fragile, please try to avoid dropping, bumping and pressing hard.`
 
-10. **Testing Recommendation**: We recommend that customers use the sample program provided by us to test with the corresponding development board.
+8. **Testing Recommendation**: We recommend that customers use the sample program provided by us to test with the corresponding development board.
+
+9. **Interface Selection**: Do not use different module interfaces at the same time.
 
 .. raw:: html
 
