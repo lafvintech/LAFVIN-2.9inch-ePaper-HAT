@@ -11,6 +11,11 @@ LAFVIN 2.9 inch E-paper Module
    :width: 75%
    :alt: Front view of the LAFVIN 2.9-inch four-colour e-paper module.
 
+.. figure:: ./Product/img/反面.jpg
+   :align: center
+   :width: 75%
+   :alt: Back view of the LAFVIN 2.9-inch e-paper module.
+
 Introduction
 ------------
 
