@@ -12,9 +12,8 @@ LAFVIN 2.9 inch E-paper Module
    :caption: SETUP & PREPARATION
 
    Image/image_processing
-   Appendix/arduino_ide
-   Setup/arduino_setup
-   Setup/raspberry_pi_os
+   Appendix/arduino_ins
+   Appendix/flash_raspberry_pi_os
 
 .. toctree::
    :maxdepth: 2
@@ -28,5 +27,4 @@ LAFVIN 2.9 inch E-paper Module
    :maxdepth: 1
    :caption: RESOURCES & SUPPORT
 
-   Resources/resources
-   Support/faq
+   Appendix/appendix

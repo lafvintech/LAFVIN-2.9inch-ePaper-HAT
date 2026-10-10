@@ -93,17 +93,25 @@ If you have already downloaded the code, you can skip this step.
 
 .. _unzip_code:
 
-.. note::
-    If you prefer downloading a ZIP file, use the commands below. Rename the
-    extracted folder to match the Git clone folder name, so all remaining
-    commands are the same for both download methods.
+.. raw:: html
 
-    .. code-block:: bash
+    <details class="optional-library">
+    <summary>ZIP Download (Alternative)</summary>
 
-        wget -O main.zip https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
-        unzip main.zip
-        mv -T LAFVIN-2.9inch-ePaper-HAT-main LAFVIN-2.9inch-ePaper-HAT
-        cd LAFVIN-2.9inch-ePaper-HAT/RPI
+If you prefer downloading a ZIP file, use the commands below. Rename the
+extracted folder to match the Git clone folder name, so all remaining
+commands are the same for both download methods.
+
+.. code-block:: bash
+
+    wget -O main.zip https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
+    unzip main.zip
+    mv -T LAFVIN-2.9inch-ePaper-HAT-main LAFVIN-2.9inch-ePaper-HAT
+    cd LAFVIN-2.9inch-ePaper-HAT/RPI
+
+.. raw:: html
+
+    </details>
 
 Choose a demo language:
 

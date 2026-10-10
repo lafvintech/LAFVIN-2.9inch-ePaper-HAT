@@ -1,13 +1,12 @@
 ESP32
 =====
 
-Software Setup
---------------
+.. note::
 
-Before using this example, complete :ref:`install_esp32_board_package`.
-The setup guide covers Arduino IDE installation, the Espressif ESP32 board
-package, and board and port selection for ESP32 and ESP32-S3.
-If the package is already installed, continue with the hardware connection below.
+   Before compiling or uploading the example, install the **esp32** board
+   package by **Espressif Systems** in Arduino IDE. Follow
+   :ref:`Environment Configuration <install_esp32_board_package>` to complete
+   the installation. If the package is already installed, continue below.
 
 Hardware Connection
 -------------------
@@ -84,8 +83,6 @@ Run The Demo
 --------------
 
 Download the code by clicking this link: `Download Code <https://codeload.github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/zip/refs/heads/main>`_
-
-`Code Download <https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip>`_
 
 After downloading and extracting the files, navigate to the ESP32/EPD290_4C folder where you'll find the example programs:
 
