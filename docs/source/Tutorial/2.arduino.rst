@@ -6,8 +6,7 @@ Working With Arduino
 Hardware Connection
 -------------------
 
-Use an 8PIN cable to connect. The default wiring below follows the
-``LAFVIN-EPD`` reference repository:
+Use an 8PIN cable to connect. Link according to the table below.
 
 .. list-table:: Arduino wiring (LAFVIN-EPD default)
    :header-rows: 1
@@ -58,7 +57,7 @@ After downloading and extracting the files, navigate to the Arduino folder where
    
    *Arduino Example Folder*
 
-Open the epd2in13_V4.ino file:
+Open the EPD290_4C.ino file:
 
 .. figure:: img/fold2.png
    :align: center
@@ -70,11 +69,11 @@ Select the corresponding Board and Port in the Tools menu of the Arduino IDE:
 
 .. figure:: img/arduino3.png
    :align: center
-   :width: 80%
+   :width: 60%
    
    *Selecting Board and Port*
 
-Finally, click upload. A successful upload will look like this (Arduino 2.3.2):
+Finally, click upload. A successful upload will look like this (Arduino 2.3.10):
 
 .. figure:: img/arduino4.png
    :align: center
@@ -83,6 +82,10 @@ Finally, click upload. A successful upload will look like this (Arduino 2.3.2):
    *Successful Upload*
 
 After uploading, you will see the example program patterns displayed on your e-Paper screen.
+
+.. figure:: img/现象.jpg
+   :align: center
+   :width: 80%
 
 .. raw:: html
 

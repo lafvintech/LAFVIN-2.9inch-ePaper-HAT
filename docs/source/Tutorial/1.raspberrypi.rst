@@ -89,8 +89,13 @@ Choose a demo language:
 C Language
 ----------
 
-Install lg Library
-^^^^^^^^^^^^^^^^^^
+.. note::
+    On the latest Raspberry Pi OS, the tested C demo only requires the ``lg``
+    library. The other GPIO libraries below are optional; install them only
+    if your demo configuration requires them.
+
+Install lg Library (Required)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the Raspberry Pi terminal and run the following commands:
 
@@ -104,11 +109,17 @@ Open the Raspberry Pi terminal and run the following commands:
 
 For more details, refer to the source code: https://github.com/gpiozero/lg
 
-On Raspberry Pi OS, installing the ``lg`` library is usually enough to run the C demo.
-If the demo fails to compile or run, install the additional libraries below as needed.
+Optional GPIO Libraries
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Install gpiod Library If Needed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Skip these installations for the tested ``lg`` demo on the latest
+Raspberry Pi OS. Expand a section only if your demo configuration requires
+that library.
+
+.. raw:: html
+
+    <details class="optional-library">
+    <summary>Install gpiod Library (Optional)</summary>
 
 Open the Raspberry Pi terminal and run the following commands:
 
@@ -117,8 +128,14 @@ Open the Raspberry Pi terminal and run the following commands:
     sudo apt-get update
     sudo apt install gpiod libgpiod-dev
 
-Install BCM2835 If Needed
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. raw:: html
+
+    </details>
+
+.. raw:: html
+
+    <details class="optional-library">
+    <summary>Install BCM2835 (Optional)</summary>
 
 Open the Raspberry Pi terminal and run the following commands:
 
@@ -131,8 +148,14 @@ Open the Raspberry Pi terminal and run the following commands:
 
 For more information, refer to the official website: http://www.airspayce.com/mikem/bcm2835/
 
-Install WiringPi If Needed
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. raw:: html
+
+    </details>
+
+.. raw:: html
+
+    <details class="optional-library">
+    <summary>Install WiringPi (Optional)</summary>
 
 Open the Raspberry Pi terminal and run the following command:
 
@@ -161,6 +184,10 @@ For Bullseye systems, use the following commands instead:
 
 Running ``gpio -v`` should display version 2.60. If it does not, the installation was not successful.
 
+.. raw:: html
+
+    </details>
+
 Download Demo Code
 ^^^^^^^^^^^^^^^^^^
 
@@ -169,22 +196,35 @@ If you have already downloaded the code, you can skip this step.
 .. code-block:: bash
 
     git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
-    cd LAFVIN-2.9inch-ePaper-HAT/RaspberryPi
+    cd LAFVIN-2.9inch-ePaper-HAT/RPI
+
+.. _unzip_code:
+
+.. note::
+    If you cannot download the code from GitHub, you can use the following commands to download the ZIP file and extract it. The remaining steps are the same as above.
+
+    .. code-block:: bash
+
+        wget https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
+        unzip main.zip
+        cd LAFVIN-2.9inch-ePaper-HAT-main/RPI
+
+    Replace the path ``LAFVIN-2.9inch-ePaper-HAT`` with ``LAFVIN-2.9inch-ePaper-HAT-main`` in the commands that follow.
 
 Compile the Demo Program
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-    On Raspberry Pi OS, try compiling after installing only the ``lg`` library first.
-    If you encounter missing dependency errors, return to the optional library steps above and install the required packages.
+    On the latest Raspberry Pi OS, install only the ``lg`` library before
+    compiling the tested C demo. The other GPIO libraries are optional and
+    are needed only if your demo is configured to use them.
     ``-j4`` uses 4 threads for compilation, and you can adjust the number as needed.
-    ``EPD=epd2in13V4`` specifies the macro definition used by the test demo in the main function.
 
 .. code-block:: bash
 
     cd c
     sudo make clean
-    sudo make -j4 EPD=epd2in13V4
+    sudo make -j4
 
 Run the Demo Program
 ^^^^^^^^^^^^^^^^^^^^
@@ -198,82 +238,88 @@ Run the Demo Program
 Python
 ------
 
-Install Libraries for Python 3
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use Python 3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
-
-    sudo apt-get update
-    sudo apt-get install python3-pip
-    sudo apt-get install python3-pil
-    sudo apt-get install python3-numpy
-
-If you encounter a ``spidev``-related error while running the demo, install it with:
-
-.. code-block:: bash
-
-    sudo pip3 install spidev
-
-You can continue without installing it first. If an error occurs during execution, install it at that time.
-
-Install Libraries for Python 2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    sudo apt-get update
-    sudo apt-get install python-pip
-    sudo apt-get install python-pil
-    sudo apt-get install python-numpy
-
-If you encounter a ``spidev``-related error while running the demo, install it with:
-
-.. code-block:: bash
-
-    sudo pip install spidev
-
-You can continue without installing it first. If an error occurs during execution, install it at that time.
-
-Install gpiozero Library
-^^^^^^^^^^^^^^^^^^^^^^^^
+This example requires Python 3 (3.8 or later). Use the system ``python3``
+interpreter to run it.
 
 .. note::
-    This library is installed by default on most systems. If it is missing, install it with the following commands:
-
-.. code-block:: bash
-
-    sudo apt-get update
-    # Python 3
-    sudo apt install python3-gpiozero
-    # Python 2
-    sudo apt install python-gpiozero
+    In our tested Raspberry Pi OS setup, the Python demo runs without any
+    additional library installation. Pillow and the Python ``lgpio`` module
+    are already available. Try running the demo first; use the collapsed
+    installation instructions below only if a missing-library error appears.
 
 Download Demo Code
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have already downloaded the code, you can skip this step.
+If you have already downloaded the code, you can skip this step and open
+``RPI/python/examples`` in the extracted project folder.
 
 .. code-block:: bash
 
     git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
-    cd LAFVIN-2.9inch-ePaper-HAT/RaspberryPi/python/examples
+    cd LAFVIN-2.9inch-ePaper-HAT/RPI/python/examples
 
 Run the Demo Program
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    sudo python3 epd_2in13_V4_test.py
+    sudo python3 epd_2in9g_test.py
 
-.. _unzip_code:
+The example loads the project driver directly from ``RPI/python/lib``;
+installing the project as a Python package is not required.
 
-.. note::
-    If you cannot download the code from GitHub, you can use the following commands to download the ZIP file and extract it. The remaining steps are the same as above.
+Install Missing Libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. code-block:: bash
+Pillow handles images, drawing, and fonts. The Python ``lgpio`` module
+handles GPIO and SPI. Install only the library reported as missing, then
+run the demo command above again.
 
-        wget https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
-        unzip main.zip
-        cd LAFVIN-2.9inch-ePaper-HAT-main
+.. raw:: html
 
-    Replace the path ``LAFVIN-2.9inch-ePaper-HAT`` with ``LAFVIN-2.9inch-ePaper-HAT-main`` in the commands that follow.
+    <details class="optional-library">
+    <summary>Install Pillow If Missing</summary>
+
+If the demo reports ``ModuleNotFoundError: No module named 'PIL'``, install
+Pillow for the system Python 3 interpreter:
+
+.. code-block:: bash
+
+    sudo apt update
+    sudo apt install python3-pil
+
+Confirm that Pillow can be imported:
+
+.. code-block:: bash
+
+    sudo python3 -c "from PIL import Image, ImageDraw, ImageFont; print('Pillow is available')"
+
+.. raw:: html
+
+    </details>
+
+.. raw:: html
+
+    <details class="optional-library">
+    <summary>Install Python lgpio If Missing</summary>
+
+If the demo reports ``Cannot import lgpio`` or
+``ModuleNotFoundError: No module named 'lgpio'``, install the Python binding:
+
+.. code-block:: bash
+
+    sudo apt update
+    sudo apt install python3-lgpio
+
+Confirm that lgpio can be imported:
+
+.. code-block:: bash
+
+    sudo python3 -c "import lgpio; print('lgpio is available')"
+
+.. raw:: html
+
+    </details>
