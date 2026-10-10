@@ -1,6 +1,14 @@
 ESP32
 =====
 
+Software Setup
+--------------
+
+Before using this example, complete :ref:`install_esp32_board_package`.
+The setup guide covers Arduino IDE installation, the Espressif ESP32 board
+package, and board and port selection for ESP32 and ESP32-S3.
+If the package is already installed, continue with the hardware connection below.
+
 Hardware Connection
 -------------------
 
@@ -71,13 +79,6 @@ For classic ESP32, select ``EPD_BOARD_ESP32_CLASSIC`` instead of the default
 
 The module regulates the supply internally and level-translates the host
 signals. The reference driver sets the SPI frequency to 4 MHz.
-
-Install Arduino IDE
----------------------
-
-You can refer to this tutorial to install Arduino IDE:
-
-:ref:`install_arduino_ide` 
 
 Run The Demo
 --------------

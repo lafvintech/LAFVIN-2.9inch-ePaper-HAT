@@ -13,6 +13,7 @@ LAFVIN 2.9 inch E-paper Module
 
    Image/image_processing
    Appendix/arduino_ide
+   Setup/arduino_setup
    Setup/raspberry_pi_os
 
 .. toctree::

@@ -1,7 +1,7 @@
 .. _raspberrypi:
 
-Raspberry Pi User Guide
-=======================
+Raspberry Pi
+============
 
 Hardware Connection
 -------------------
@@ -78,6 +78,32 @@ Check ``/boot/config.txt`` or ``/boot/firmware/config.txt`` to confirm that SPI 
     sudo cat /boot/config.txt
     # Or for newer systems
     sudo cat /boot/firmware/config.txt
+
+.. _download_code:
+
+Download Demo Code
+^^^^^^^^^^^^^^^^^^
+
+If you have already downloaded the code, you can skip this step.
+
+.. code-block:: bash
+
+    git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
+    cd LAFVIN-2.9inch-ePaper-HAT/RPI
+
+.. _unzip_code:
+
+.. note::
+    If you prefer downloading a ZIP file, use the commands below. Rename the
+    extracted folder to match the Git clone folder name, so all remaining
+    commands are the same for both download methods.
+
+    .. code-block:: bash
+
+        wget -O main.zip https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
+        unzip main.zip
+        mv -T LAFVIN-2.9inch-ePaper-HAT-main LAFVIN-2.9inch-ePaper-HAT
+        cd LAFVIN-2.9inch-ePaper-HAT/RPI
 
 Choose a demo language:
 
@@ -188,28 +214,6 @@ Running ``gpio -v`` should display version 2.60. If it does not, the installatio
 
     </details>
 
-Download Demo Code
-^^^^^^^^^^^^^^^^^^
-
-If you have already downloaded the code, you can skip this step.
-
-.. code-block:: bash
-
-    git clone https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT.git
-    cd LAFVIN-2.9inch-ePaper-HAT/RPI
-
-.. _unzip_code:
-
-.. note::
-    If you cannot download the code from GitHub, you can use the following commands to download the ZIP file and extract it. The remaining steps are the same as above.
-
-    .. code-block:: bash
-
-        wget https://github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/archive/refs/heads/main.zip
-        unzip main.zip
-        cd LAFVIN-2.9inch-ePaper-HAT-main/RPI
-
-    Replace the path ``LAFVIN-2.9inch-ePaper-HAT`` with ``LAFVIN-2.9inch-ePaper-HAT-main`` in the commands that follow.
 
 Compile the Demo Program
 ^^^^^^^^^^^^^^^^^^^^^^^^

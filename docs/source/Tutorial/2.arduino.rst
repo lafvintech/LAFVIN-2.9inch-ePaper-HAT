@@ -1,20 +1,22 @@
 .. _arduino:
 
-Working With Arduino
-======================
+Arduino UNO R4
+==============
+
+Use an **Arduino UNO R4** to run this example.
 
 Hardware Connection
 -------------------
 
 Use an 8PIN cable to connect. Link according to the table below.
 
-.. list-table:: Arduino wiring (LAFVIN-EPD default)
+.. list-table:: Arduino UNO R4 Wiring
    :header-rows: 1
    :widths: 40 60
    :class: longtable
 
    * - E-paper module pin
-     - Arduino pin
+     - Arduino UNO R4 pin
    * - VCC
      - VCC_INT (module 5 V supply)
    * - GND
@@ -65,13 +67,15 @@ Open the EPD290_4C.ino file:
    
    *Opening the Example File*
 
-Select the corresponding Board and Port in the Tools menu of the Arduino IDE:
+In the Arduino IDE **Tools** menu, select the **Arduino UNO R4** model that
+matches your board and its connected port. The screenshot below selects
+**Arduino UNO R4 WiFi**:
 
 .. figure:: img/arduino3.png
    :align: center
    :width: 60%
    
-   *Selecting Board and Port*
+   *Selecting the Arduino UNO R4 Board and Port*
 
 Finally, click upload. A successful upload will look like this (Arduino 2.3.10):
 
