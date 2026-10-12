@@ -121,3 +121,8 @@ Finally, click upload. A successful upload will look like this (Arduino 2.3.10):
    :width: 80%
    
    *Successful Upload*
+
+.. image:: ../Product/img/esp32s3-demo-cropped.jpg
+   :align: center
+   :width: 90%
+   :alt: ESP32-S3 running the LAFVIN 2.9-inch four-colour e-paper example.

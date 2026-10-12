@@ -150,6 +150,7 @@ Open the Raspberry Pi terminal and run the following commands:
     cd lg-master
     make
     sudo make install
+    cd ..
 
 For more details, refer to the source code: https://github.com/gpiozero/lg
 
