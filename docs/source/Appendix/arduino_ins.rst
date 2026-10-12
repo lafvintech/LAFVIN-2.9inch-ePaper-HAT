@@ -3,7 +3,7 @@
 Install Arduino IDE
 =======================
 
-Download the Arduino IDE 2.x.x
+Download the Arduino IDE
 -------------------------------
 
 #. Visit `Download Arduino IDE <https://www.arduino.cc/en/software>`_ page.
