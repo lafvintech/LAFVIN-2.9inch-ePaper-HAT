@@ -10,6 +10,11 @@ Insert the LAFVIN 2.9 inch E-paper Module directly into the Raspberry Pi
 40-pin GPIO header, and make sure all pins are aligned correctly before
 powering on.
 
+.. image:: ../Product/img/PI_GPIO.png
+   :align: center
+   :width: 75%
+   :alt: Raspberry Pi GPIO header pin definitions.
+
 .. list-table:: Raspberry Pi Pin Correspondence Table
    :header-rows: 1
    :widths: 30 45 25

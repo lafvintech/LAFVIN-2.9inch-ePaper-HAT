@@ -33,6 +33,36 @@ Onboard voltage translator, compatible with 3.3V / 5V MCUs.
 Comes with online development resources and documentation, including pin
 definitions and Raspberry Pi examples.
 
+Package Contents
+----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 75 25
+   :class: longtable
+
+   * - Item
+     - Quantity
+   * - 2.9 inch E-paper Module
+     - x1
+   * - MX1.25 8-pin cable
+     - x1
+   * - Screwdriver
+     - x1
+   * - Screw kit
+     - x1
+   * - 8-pin header
+     - x1
+
+.. image:: ./Product/img/组件清单.jpg
+   :align: center
+   :width: 75%
+   :alt: LAFVIN 2.9-inch e-paper module package contents.
+
+.. note::
+
+   Raspberry Pi, ESP, Arduino, and other controller boards are not included.
+
 Parameters
 ----------
 
