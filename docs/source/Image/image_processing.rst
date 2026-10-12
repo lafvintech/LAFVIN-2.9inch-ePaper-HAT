@@ -38,15 +38,17 @@ Launch the Tool
 
 Download and extract the `2.9-inch example project
 <https://codeload.github.com/lafvintech/LAFVIN-2.9inch-ePaper-HAT/zip/refs/heads/main>`_.
-If you already have the project, open its **tools** folder.
+If you already have the project, open its **Tools** folder.
 
 On **64-bit Windows**, extract the following package:
 
 .. code-block:: text
 
-   tools/releases/LAFVIN-Image-Converter-1.0.0-win64.zip
+   Tools/LAFVIN-Image-Converter-1.0.0-win64.zip
 
 Open the extracted folder and double-click **LAFVIN-Image-Converter.exe**.
+If you extracted the full project, you can also launch the EXE directly from
+**Tools/LAFVIN-Image-Converter-win64/**.
 The EXE includes Python, the image-processing library and the drag-and-drop
 component. No Python or library installation is required. The package filename
 uses **1.0.0** for this **v1.0** release.
@@ -257,29 +259,6 @@ of each array. Keep backup files outside the sketch folder, then compile again.
 
 **Drag-and-drop is unavailable.**
 
-Use **Choose image(s)...** to select the file. When running the Python source
-edition, install the dependencies described below to enable drag-and-drop.
-
-.. raw:: html
-
-   <details class="optional-library">
-   <summary>Run the Python Source Edition (Alternative)</summary>
-
-The Windows EXE is the recommended option for Windows users. For development
-or use on macOS / Linux, run the source edition with **Python 3.10 or newer**.
-From the example project's root folder, install the dependencies and launch
-the GUI:
-
-.. code-block:: powershell
-
-   py -3 -m pip install -r tools/requirements.txt
-   py -3 tools/img2epd_gui.py
-
-On macOS / Linux, replace **py -3** with **python3**. Some Linux installations
-also require the operating system's Tk package, such as **python3-tk**.
-On Windows, **tools/start_gui.bat** is an alternative source launcher after
-the dependencies are installed. It is not needed for the standalone EXE.
-
-.. raw:: html
-
-   </details>
+Use **Choose image(s)...** to select the file. If needed, extract the
+Windows package again and launch its EXE; it includes the drag-and-drop
+component.
